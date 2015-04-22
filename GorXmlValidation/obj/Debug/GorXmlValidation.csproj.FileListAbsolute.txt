@@ -1,5 +1,0 @@
-D:\Projekty\Inne\GorXmlValidation\GorXmlValidation\bin\Debug\GorXmlValidation.dll
-D:\Projekty\Inne\GorXmlValidation\GorXmlValidation\bin\Debug\GorXmlValidation.pdb
-D:\Projekty\Inne\GorXmlValidation\GorXmlValidation\obj\Debug\GorXmlValidation.csprojResolveAssemblyReference.cache
-D:\Projekty\Inne\GorXmlValidation\GorXmlValidation\obj\Debug\GorXmlValidation.dll
-D:\Projekty\Inne\GorXmlValidation\GorXmlValidation\obj\Debug\GorXmlValidation.pdb
