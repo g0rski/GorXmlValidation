@@ -1,0 +1,7 @@
+E:\Projekty\Inne\GorXmlValidator\GorXmlValidation.Tests\obj\Debug\GorXmlValidation.Tests.csprojResolveAssemblyReference.cache
+E:\Projekty\Inne\GorXmlValidator\GorXmlValidation.Tests\bin\Debug\GorXmlValidation.Tests.dll
+E:\Projekty\Inne\GorXmlValidator\GorXmlValidation.Tests\bin\Debug\GorXmlValidation.Tests.pdb
+E:\Projekty\Inne\GorXmlValidator\GorXmlValidation.Tests\bin\Debug\GorXmlValidation.dll
+E:\Projekty\Inne\GorXmlValidator\GorXmlValidation.Tests\bin\Debug\GorXmlValidation.pdb
+E:\Projekty\Inne\GorXmlValidator\GorXmlValidation.Tests\obj\Debug\GorXmlValidation.Tests.dll
+E:\Projekty\Inne\GorXmlValidator\GorXmlValidation.Tests\obj\Debug\GorXmlValidation.Tests.pdb

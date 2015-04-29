@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<applicationValidators xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <rules>
+    <rule name="test1">
+      <conditions>
+        <condition>
+          <when>
+            <property name="name" type="type">
+              <match errorMessageKey="message" value="12" />
+              <notEmpty errorMessageKey="message" value="12" />
+              <greater errorMessageKey="message" value="12" />
+              <lower errorMessageKey="message" value="12" />
+            </property>
+          </when>
+          <then>
+            <property name="name" type="type">
+              <match errorMessageKey="message" value="12" />
+              <notEmpty errorMessageKey="message" value="12" />
+              <greater errorMessageKey="message" value="12" />
+              <lower errorMessageKey="message" value="12" />
+            </property>
+          </then>
+        </condition>
+        <condition>
+          <when>
+            <property name="name" type="type">
+              <match errorMessageKey="message" value="12" />
+              <notEmpty errorMessageKey="message" value="12" />
+              <greater errorMessageKey="message" value="12" />
+              <lower errorMessageKey="message" value="12" />
+            </property>
+          </when>
+          <then>
+            <property name="name" type="type">
+              <match errorMessageKey="message" value="12" />
+              <notEmpty errorMessageKey="message" value="12" />
+              <greater errorMessageKey="message" value="12" />
+              <lower errorMessageKey="message" value="12" />
+            </property>
+          </then>
+        </condition>
+      </conditions>
+      <properties xsi:nil="true" />
+    </rule>
+    <rule name="test2">
+      <conditions xsi:nil="true" />
+      <properties>
+        <property name="name" type="type">
+          <match errorMessageKey="message" value="12" />
+          <notEmpty errorMessageKey="message" value="12" />
+          <greater errorMessageKey="message" value="12" />
+          <lower errorMessageKey="message" value="12" />
+        </property>
+        <property name="name" type="type">
+          <match errorMessageKey="message" value="12" />
+          <notEmpty errorMessageKey="message" value="12" />
+          <greater errorMessageKey="message" value="12" />
+          <lower errorMessageKey="message" value="12" />
+        </property>
+        <property name="name" type="type">
+          <match errorMessageKey="message" value="12" />
+          <notEmpty errorMessageKey="message" value="12" />
+          <greater errorMessageKey="message" value="12" />
+          <lower errorMessageKey="message" value="12" />
+        </property>
+      </properties>
+    </rule>
+  </rules>
+</applicationValidators>
