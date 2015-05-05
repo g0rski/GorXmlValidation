@@ -10,11 +10,13 @@ namespace GorXmlValidation.Tests
     public class ConfigurationTests
     {
         private string TargetDIr;
+        private string XmlFileName;
 
         [TestInitialize]
         public void Init()
         {
             TargetDIr = AppDomain.CurrentDomain.BaseDirectory;
+            XmlFileName = @"\test.xml";
         }
 
 
@@ -22,18 +24,29 @@ namespace GorXmlValidation.Tests
         public void TestSerialization()
         {
 
-            var simpleRule =  new SimpeRule(){
+            var simpleRule =  new SimpeRule<decimal>(){
                     ErrorMessageKey="message",
-                    Value="12"};
+                    Value=12};
+            var simpleRuleString = new SimpeRule<string>()
+            {
+                ErrorMessageKey = "message",
+                Value = "asdasd"
+            };
+
+            var simpleRulebool = new SimpeRule<bool>()
+            {
+                ErrorMessageKey = "message",
+                Value = true
+            };
 
             var property = new ValidationProperty()
             {
                 Greater = simpleRule,
                Lower = simpleRule,
-               Match = simpleRule,
+                Match = simpleRuleString,
                Name = "name",
-               NotEmpty =simpleRule,
-               Type="type"
+                NotEmpty = simpleRulebool,
+               StringType = typeof(int).FullName
                 };
                 
                 var conditions = new List<Condition>();
@@ -56,11 +69,18 @@ namespace GorXmlValidation.Tests
             };
 
             var serializer = new XmlSerializer(typeof(RulesDefinition));
-            var filePath = TargetDIr + "/test.xml";
+            var filePath = TargetDIr + XmlFileName;
             using (var fileStream = new StreamWriter(filePath))
             {
                 serializer.Serialize(fileStream, obj);
             }
+        }
+    
+        [TestMethod]
+        public void TestDeserialization()
+        {
+            var rules = RulesDefinition.GetConfig(TargetDIr + XmlFileName);
+            Assert.IsNotNull(rules);
         }
     }
 }

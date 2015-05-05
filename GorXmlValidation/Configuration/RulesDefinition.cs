@@ -1,4 +1,8 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.IO;
+using System.Xml.Serialization;
+
+
 
 [XmlType(AnonymousType = true)]
 [XmlRoot(IsNullable = false, ElementName = "applicationValidators")]
@@ -7,6 +11,15 @@ public class RulesDefinition
     [XmlArray(ElementName = "rules", IsNullable = false)]
     [XmlArrayItem(ElementName = "rule")]
     public Rule[] Rules { get; set; }
+
+    public static RulesDefinition GetConfig(string filePath)
+    {
+        using (var reader = new StreamReader(filePath))
+        {
+            var serializer = new XmlSerializer(typeof(RulesDefinition));
+            return (RulesDefinition)serializer.Deserialize(reader);
+        }
+    }
 }
 
 public class Rule
@@ -43,29 +56,38 @@ public class Case
 public class ValidationProperty
 {
     [XmlElement(ElementName = "match")]
-    public SimpeRule Match { get; set; }
-
+    public SimpeRule<string> Match { get; set; }
+    
     [XmlElement(ElementName = "notEmpty")]
-    public SimpeRule NotEmpty { get; set; }
+    public SimpeRule<bool> NotEmpty { get; set; }
 
     [XmlElement(ElementName = "greater")]
-    public SimpeRule Greater { get; set; }
+    public SimpeRule<decimal> Greater { get; set; }
 
     [XmlElement(ElementName = "lower")]
-    public SimpeRule Lower { get; set; }
+    public SimpeRule<decimal> Lower { get; set; }
 
     [XmlAttribute(AttributeName = "name")]
     public string Name { get; set; }
 
     [XmlAttribute(AttributeName = "type")]
-    public string Type { get; set; }
+    public string StringType { get; set; }
+
+    public Type Type
+    {
+        get
+        {
+            return Type.GetType(StringType);
+        }
+    }
 }
 
 [XmlType(AnonymousType = true)]
-public class SimpeRule
+public class SimpeRule<T>
 {
     [XmlAttribute(AttributeName = "errorMessageKey")]
     public string ErrorMessageKey { get; set; }
     [XmlAttribute(AttributeName = "value")]
-    public string Value { get; set; }
+    public T Value { get; set; }
 }
+

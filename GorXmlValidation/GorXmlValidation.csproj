@@ -41,14 +41,11 @@
   <ItemGroup>
     <Compile Include="Configuration\RulesDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Results\ValidationResult.cs" />
+    <Compile Include="Validator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\XmlRuleFile.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Content\XmlRulesSchema.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <Folder Include="Services\Abstract\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
